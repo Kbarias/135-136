@@ -1,0 +1,887 @@
+//Kiara Barias
+//Takes two numbers and determines whether one is divisible by the other.
+
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+	if(d==0)
+		{
+			return false;
+		}
+	if(n%d==0)
+		{
+			return true;
+		}
+	else
+		{
+			return false;
+		}
+}
+int main()
+{
+	int n, d;
+	bool outcome;
+	
+	cout<<"Enter a number:"<<endl;
+	cin>>n;
+	cout<<"Enter a second number:"<<endl;
+	cin>>d;
+	
+	
+	outcome=isDivisibleBy(n,d);
+	
+	if(outcome==false)
+	{
+		cout<<"No"<<endl;
+	}
+	else
+	{
+		cout<<"Yes"<<endl;
+	}
+return 0;
+}
+
+
+//Takes in a number and determines whether it is a prime number or not
+
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+	if(d==0)
+		{
+			return false;
+		}
+	if(n%d==0)
+		{
+			return true;
+		}
+	else
+		{
+			return false;
+		}
+}
+bool isPrime(int n)
+{
+	if(n<2)
+	{
+		return false;
+	}
+	
+	bool hold=true;
+	
+	for(int i=2;i<n; i++)
+	{	
+		if(n%i==0)
+		{
+			hold=false;
+		}
+	}
+	return hold;
+}
+int main()
+{
+	int n, d;
+	bool outcome, outcome1;
+	
+	cout<<"Enter a number:"<<endl;
+	cin>>n;
+	cout<<"Enter a second number:"<<endl;
+	cin>>d;
+	
+	
+	outcome=isDivisibleBy(n,d);
+	
+	if(outcome==false)
+	{
+		cout<<"Not divisible"<<endl;
+	}
+	else
+	{
+		cout<<"Yes divisible"<<endl;
+	}
+	
+	outcome1=isPrime(n);
+	
+	if(outcome1==false)
+	{
+		cout<<"Not a prime"<<endl;
+	}
+	if(outcome1==true)
+	{
+		cout<<"Prime"<<endl;
+	}
+return 0;
+}
+
+
+
+//Takes in a number and gives out next prime number
+
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+    if(d==0)
+    {
+        return false;
+    }
+    if(n%d==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool isPrime(int n)
+{
+    if(n<2)
+    {
+        return false;
+    }
+    
+    bool hold=true;
+    
+    for(int i=2;i<n; i++)
+    {
+        if(n%i==0)
+        {
+            hold=false;
+        }
+    }
+    return hold;
+}
+int nextPrime(int n)
+{
+    bool nextP=false;
+    int j;
+    j=n+1;
+    if(n<0)
+        {
+            j=2;
+            return j;
+        }
+    for(int i=2;i<j;i++)
+    {
+        if(j%i==0)
+        {
+            j++;
+            i=2;
+        }
+        else
+        {
+           nextP=true;        
+        }
+    }
+    return j;
+}
+int main()
+{
+    int n, d;
+    bool outcome, outcome1;
+    int outcome2;
+    
+    cout<<"Enter a number:"<<endl;
+    cin>>n;
+    cout<<"Enter a second number:"<<endl;
+    cin>>d;
+    
+    
+    outcome=isDivisibleBy(n,d);
+    
+    if(outcome==false)
+    {
+        cout<<"Not divisible"<<endl;
+    }
+    else
+    {
+        cout<<"Yes divisible"<<endl;
+    }
+    
+    outcome1=isPrime(n);
+    
+    if(outcome1==false)
+    {
+        cout<<"Not a prime"<<endl;
+    }
+    if(outcome1==true)
+    {
+        cout<<"Prime"<<endl;
+    }
+    outcome2=nextPrime(n);
+        cout<<"Next prime "<<outcome2<<endl;
+    return 0;
+}
+
+
+//Counts the number of prime numbers within a range
+
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+    if(d==0)
+    {
+        return false;
+    }
+    if(n%d==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool isPrime(int n)
+{
+    if(n<2)
+    {
+        return false;
+    }
+    
+    bool hold=true;
+    
+    for(int i=2;i<n; i++)
+    {
+        if(n%i==0)
+        {
+            hold=false;
+        }
+    }
+    return hold;
+}
+int nextPrime(int n)
+{
+    bool nextP=false;
+    int j;
+    j=n+1;
+    if(n<0)
+        {
+            j=2;
+            return j;
+        }
+    for(int i=2;i<j;i++)
+    {
+        if(j%i==0)
+        {
+            j++;
+            i=2;
+        }
+        else
+        {
+           nextP=true;        
+        }
+    }
+    return j;
+}
+int countPrimes(int a, int b)
+{
+    bool nextP=false;
+    int count=0;
+    int k, i;
+    for (k=a; k<=b; k++)
+    {
+        for(i=2;i<k;i++)
+        {
+            if(k%i==0)
+            {
+                break;
+            }
+        }
+        if(i==k)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+int main()
+{
+    int n, d;
+    bool outcome, outcome1;
+    int outcome2,outcome3;
+    
+    cout<<"Enter a number:"<<endl;
+    cin>>n;
+    cout<<"Enter a second number:"<<endl;
+    cin>>d;
+    
+    
+    outcome=isDivisibleBy(n,d);
+    
+    if(outcome==false)
+    {
+        cout<<"Not divisible"<<endl;
+    }
+    else
+    {
+        cout<<"Yes divisible"<<endl;
+    }
+    
+    outcome1=isPrime(n);
+    
+    if(outcome1==false)
+    {
+        cout<<"Not a prime"<<endl;
+    }
+    if(outcome1==true)
+    {
+        cout<<"Prime"<<endl;
+    }
+    outcome2=nextPrime(n);
+        cout<<"Next prime: "<<outcome2<<endl;
+    int a,b;
+    cout<<"Enter a number:"<<endl;
+    cin>>a;
+    cout<<"Enter a second number:"<<endl;
+    cin>>b;
+    outcome3=countPrimes(a,b);
+    cout<<outcome3<<endl;
+    return 0;
+}
+
+
+//Finds twin primes of entered numbers
+
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+    if(d==0)
+    {
+        return false;
+    }
+    if(n%d==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool isPrime(int n)
+{
+    if(n<2)
+    {
+        return false;
+    }
+    
+    bool hold=true;
+    
+    for(int i=2;i<n; i++)
+    {
+        if(n%i==0)
+        {
+            hold=false;
+        }
+    }
+    return hold;
+}
+int nextPrime(int n)
+{
+    bool nextP=false;
+    int j;
+    j=n+1;
+    if(n<0)
+        {
+            j=2;
+            return j;
+        }
+    for(int i=2;i<j;i++)
+    {
+        if(j%i==0)
+        {
+            j++;
+            i=2;
+        }
+        else
+        {
+           nextP=true;        
+        }
+    }
+    return j;
+}
+int countPrimes(int a, int b)
+{
+    int count=0;
+    int k, i;
+    for (k=a; k<=b; k++)
+    {
+        for(i=2;i<k;i++)
+        {
+            if(k%i==0)
+            {
+                break;
+            }
+        }
+        if(i==k)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+bool isTwinPrime(int n)
+{
+    bool outcomeTP, outcomeTPP, outcomeTPP2, outcomeTPX;
+    
+    outcomeTP=isPrime(n);
+    if(outcomeTP == false)
+    {
+        return false;
+      //  outcomeTPX=false;
+    }else if(outcomeTP == true)
+    {
+        if(isPrime(n-2) == true || isPrime(n+2) == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    // if (outcomeTPP==true || outcomeTPP2==true)
+    // {
+    //     return  true;
+    //     //outcomeTPX=true;
+    // }
+    
+    return false;
+    // return outcomeTPX;
+}
+//if(isPrime(n-2) == true || isPrime(n+2) == true){
+int main()
+{
+    int n, d;
+    bool outcome, outcome1, outcome4;
+    int outcome2,outcome3;
+    
+    cout<<"Enter a number:"<<endl;
+    cin>>n;
+    cout<<"Enter a second number:"<<endl;
+    cin>>d;
+    
+    
+    outcome=isDivisibleBy(n,d);
+    
+    if(outcome==false)
+    {
+        cout<<"Not divisible"<<endl;
+    }
+    else
+    {
+        cout<<"Yes divisible"<<endl;
+    }
+    
+    outcome1=isPrime(n);
+    
+    if(outcome1==false)
+    {
+        cout<<"Not a prime"<<endl;
+    }
+    if(outcome1==true)
+    {
+        cout<<"Prime"<<endl;
+    }
+    outcome2=nextPrime(n);
+        cout<<"Next prime: "<<outcome2<<endl;
+    int a,b;
+    cout<<"Enter a number:"<<endl;
+    cin>>a;
+    cout<<"Enter a second number:"<<endl;
+    cin>>b;
+    outcome3=countPrimes(a,b);
+    cout<<outcome3<<endl;
+    int TP;
+    cout<<"Enter a number to check for twim prime:"<<endl;
+    cin>>TP;
+    outcome4=isTwinPrime(TP);
+    if(outcome4==true)
+    {
+        cout<<"true"<<endl;
+    }
+    if(outcome4==false)
+    {
+        cout<<"false"<<endl;
+    }
+    return 0;
+}
+
+
+//Finds the next twin prime of a number
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+    if(d==0)
+    {
+        return false;
+    }
+    if(n%d==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool isPrime(int n)
+{
+    if(n<2)
+    {
+        return false;
+    }
+    
+    bool hold=true;
+    
+    for(int i=2;i<n; i++)
+    {
+        if(n%i==0)
+        {
+            hold=false;
+        }
+    }
+    return hold;
+}
+int nextPrime(int n)
+{
+    bool nextP=false;
+    int j;
+    j=n+1;
+    if(n<0)
+        {
+            j=2;
+            return j;
+        }
+    for(int i=2;i<j;i++)
+    {
+        if(j%i==0)
+        {
+            j++;
+            i=2;
+        }
+        else
+        {
+           nextP=true;        
+        }
+    }
+    return j;
+}
+int countPrimes(int a, int b)
+{
+    int count=0;
+    int k, i;
+    for (k=a; k<=b; k++)
+    {
+        for(i=2;i<k;i++)
+        {
+            if(k%i==0)
+            {
+                break;
+            }
+        }
+        if(i==k)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+bool isTwinPrime(int n)
+{
+    bool outcomeTP;
+    
+    outcomeTP=isPrime(n);
+    if(outcomeTP == false)
+    {
+        return false;
+    }else if(outcomeTP == true)
+    {
+        if(isPrime(n-2) == true || isPrime(n+2) == true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    return false;
+}
+int nextTwinPrime(int n)
+{
+    int k=n+1;
+    int actualTP;
+    if(n<2)
+    {
+        return 3;
+    }
+    for(int i=k;i!=(isTwinPrime(i)==true);i++)
+        {
+            if(isTwinPrime(i) == true)
+            {
+                actualTP=i;
+                break;
+            }
+        }
+    return actualTP;
+}
+int main()
+{
+    int n, d, outcome4;
+    bool outcome, outcome1;
+    int outcome2,outcome3;
+    
+    cout<<"Enter a number:"<<endl;
+    cin>>n;
+    cout<<"Enter a second number:"<<endl;
+    cin>>d;
+    
+    
+    outcome=isDivisibleBy(n,d);
+    
+    if(outcome==false)
+    {
+        cout<<"Not divisible"<<endl;
+    }
+    else
+    {
+        cout<<"Yes divisible"<<endl;
+    }
+    
+    outcome1=isPrime(n);
+    
+    if(outcome1==false)
+    {
+        cout<<"Not a prime"<<endl;
+    }
+    if(outcome1==true)
+    {
+        cout<<"Prime"<<endl;
+    }
+    outcome2=nextPrime(n);
+        cout<<"Next prime: "<<outcome2<<endl;
+    int a,b;
+    cout<<"Enter a number:"<<endl;
+    cin>>a;
+    cout<<"Enter a second number:"<<endl;
+    cin>>b;
+    outcome3=countPrimes(a,b);
+    cout<<outcome3<<endl;
+    int TP;
+    cout<<"Enter a number to check for twin prime:"<<endl;
+    cin>>TP;
+    outcome4=isTwinPrime(TP);
+    if(outcome4==true)
+    {
+        cout<<"true"<<endl;
+    }
+    if(outcome4==false)
+    {
+        cout<<"false"<<endl;
+    }
+    outcome4=nextTwinPrime(TP);
+        cout<<"Next twin prime:"<<outcome4<<endl;
+    return 0;
+}
+
+
+//Finds the next twin prime of a number
+#include <iostream>
+using namespace std;
+bool isDivisibleBy(int n, int d)
+{
+    if(d==0)
+    {
+        return false;
+    }
+    if(n%d==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+bool isPrime(int n)
+{
+    if(n<2)
+    {
+        return false;
+    }
+    
+    bool hold=true;
+    
+    for(int i=2;i<n; i++)
+    {
+        if(n%i==0)
+        {
+            hold=false;
+        }
+    }
+    return hold;
+}
+int nextPrime(int n)
+{
+    bool nextP=false;
+    int j;
+    j=n+1;
+    if(n<0)
+        {
+            j=2;
+            return j;
+        }
+    for(int i=2;i<j;i++)
+    {
+        if(j%i==0)
+        {
+            j++;
+            i=2;
+        }
+        else
+        {
+           nextP=true;        
+        }
+    }
+    return j;
+}
+int countPrimes(int a, int b)
+{
+    int count=0;
+    int k, i;
+    for (k=a; k<=b; k++)
+    {
+        for(i=2;i<k;i++)
+        {
+            if(k%i==0)
+            {
+                break;    //it breaks right away not getting to itself
+            }
+        }
+        if(i==k)         //if it gets through all the numbers of up to itself and still doesn't find a zero remainder, then it adds one to count.
+        {
+            count++;
+        }
+    }
+    return count;
+}
+bool isTwinPrime(int n)
+{
+    bool outcomeTP;
+    
+    outcomeTP=isPrime(n);
+    if(outcomeTP == false)
+    {
+        return false;
+    }
+    else if(outcomeTP == true)
+    {
+        if(isPrime(n-2) == true || isPrime(n+2) == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    return false;
+}
+int nextTwinPrime(int n)
+{
+    int k=n+1;
+    int actualTP;
+    if(n<2)
+    {
+        return 3;
+    }
+    for(int i=k;i!=(isTwinPrime(i)==true);i++)
+        {
+            if(isTwinPrime(i) == true)
+            {
+                actualTP=i;
+                break;
+            }
+        }
+    return actualTP;
+}
+int largestTwinPrime(int a, int b)
+{
+    int largest = a;
+    bool lookingforp;
+    for(int i=b; i>=a; i--)
+    {
+        if(isTwinPrime(i)==true)
+        {
+            return i;
+        }
+    }
+    return -1;;
+}
+int main()
+{
+    int n, d;
+    bool outcome, outcome1;
+    int outcome2,outcome3, outcome4, outcome5;
+    
+    cout<<"Enter a number:"<<endl;
+    cin>>n;
+    cout<<"Enter a second number:"<<endl;
+    cin>>d;
+    
+    
+    outcome=isDivisibleBy(n,d);
+    
+    if(outcome==false)
+    {
+        cout<<"Not divisible"<<endl;
+    }
+    else
+    {
+        cout<<"Yes divisible"<<endl;
+    }
+    
+    outcome1=isPrime(n);
+    
+    if(outcome1==false)
+    {
+        cout<<"Not a prime"<<endl;
+    }
+    if(outcome1==true)
+    {
+        cout<<"Prime"<<endl;
+    }
+    outcome2=nextPrime(n);
+        cout<<"Next prime: "<<outcome2<<endl;
+    int a,b;
+    cout<<"Enter a number:"<<endl;
+    cin>>a;
+    cout<<"Enter a second number:"<<endl;
+    cin>>b;
+    outcome3=countPrimes(a,b);
+    cout<<outcome3<<endl;
+    int TP;
+    cout<<"Enter a number to check for twin prime:"<<endl;
+    cin>>TP;
+    outcome4=isTwinPrime(TP);
+    if(outcome4==true)
+    {
+        cout<<"true"<<endl;
+    }
+    if(outcome4==false)
+    {
+        cout<<"false"<<endl;
+    }
+    outcome4=nextTwinPrime(TP);
+        cout<<"Next twin prime:"<<outcome4<<endl;
+    int aa, bb;
+    cout<<"Enter a range of numbers: "<<endl;
+    cin>>aa>>bb;
+    outcome5=largestTwinPrime(aa,bb);
+    cout<<outcome5<<endl;
+    return 0;
+}
