@@ -1,0 +1,201 @@
+//Kiara Barias
+//Asks for data any prints out basin storage on that day
+
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+using namespace std;
+int main()
+{
+	ifstream fin("Current_Reservoir_Levels.tsv");
+	
+	if (fin.fail())
+	{
+		cerr<<"File cannot be opened for reading."<<endl;
+		exit(1);
+	}
+	
+	string date;
+	float eastSt, eastEl, westSt, westEl;
+	
+	string junk;
+	getline(fin,junk);
+	
+	string userdate;
+	cout<<"Input a date";
+	cin>>userdate;
+	
+	while(fin>>date>>eastSt>>eastEl>>westSt>>westEl)
+	{
+	if (date==userdate)
+	{
+	cout<<date<<" "<< eastSt<< endl;
+	}
+	}
+	
+//go through each line and then print out the one that is equal to the date entered 
+//print out date<<eastSt
+return 0;
+}
+
+
+//Computes min and max of Eastern Basin
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+using namespace std;
+int main()
+{
+    ifstream fin("Current_Reservoir_Levels.tsv");
+    
+    if (fin.fail())
+    {
+        cerr<<"File cannot be opened for reading."<<endl;
+        exit(1);
+    }
+    float max = 71.99, min=71.99;
+    
+    
+    string date;
+    float eastSt, eastEl, westSt, westEl;
+    
+    string junk;
+    getline(fin,junk);
+    
+    while(fin>>date>>eastSt>>eastEl>>westSt>>westEl)
+    {
+        
+        if (eastSt>=max)
+        {
+            max=eastSt;
+        }
+        if (eastSt<max)
+        {
+            if(eastSt<min)
+            {
+                min=eastSt;
+            }
+        }
+        
+    }
+    
+    cout<<"Minimum storage in East basin: "<<min<<endl;
+    cout<<"Maximum storage in East basin: "<<max<<endl;
+    
+    //go through each line and then print out the one that is equal to the date entered
+    //print out date<<eastSt
+    
+    return 0;
+}
+
+
+//Asks for two inputs and compares the elevation levels within the range created by the two inputs
+
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+using namespace std;
+int main()
+{
+    ifstream fin("Current_Reservoir_Levels.tsv");
+    
+    if (fin.fail())
+    {
+        cerr<<"File cannot be opened for reading."<<endl;
+        exit(1);
+    }
+    
+    string date;
+    float eastSt, eastEl, westSt, westEl;
+    
+    string junk;
+    getline(fin,junk);
+    
+    
+    string input1, input2;
+    cout<< "Enter a date: ";
+    cin>>input1;
+    cout<< "Enter a second date: ";
+    cin>>input2;
+    
+    while(fin>>date>>eastSt>>eastEl>>westSt>>westEl)
+    {
+        if((date>=input1) && (date<=input2))
+        {
+            if (eastEl>westEl)
+            {
+                cout<<date<<" East"<<endl;
+            }
+            if (eastEl<westEl)
+            {
+                cout<<date<<" West"<<endl;
+            }
+            if (eastEl==westEl)
+            {
+                cout<<date<<" Equal"<<endl;
+            }
+        }
+    }
+    return 0;
+}
+
+
+//Asks for two inputs, prints out the dates from latest to earliest and their western elevation levels
+
+#include <iostream>
+#include <cstdlib>
+#include <fstream>
+using namespace std;
+int main()
+{
+    ifstream fin("Current_Reservoir_Levels.tsv");
+    if (fin.fail())
+    {
+        cerr<<"File cannot be opened for reading."<<endl;
+        exit(1);
+    }
+    
+    string date;
+    double eastSt, eastEl, westSt, westEl;
+    
+    string junk;
+    getline(fin,junk);
+    
+    string input1, input2;
+    cout<< "Enter earlier date: ";
+    cin>>input1;
+    cout<< "Enter later date: ";
+    cin>>input2;
+    
+    string datee[400];
+    double westE[400];
+    
+    int count = 0;
+    int check = 0;
+    int length;
+    
+    while(fin>>date>>eastSt>>eastEl>>westSt>>westEl)
+    {
+        if(date == input1)
+        {
+            check =1;
+        }
+        if (check ==1)
+        {
+            datee[count]=date;
+            westE[count]=westEl;
+            count = count +1;
+            length = count;
+        }
+        if (date == input2)
+        {
+            check =0;
+        }
+    }
+    for (count = length-1; count>=0; count--)
+    {
+        cout<<datee[count]<<" "<<westE[count]<<endl;
+    }
+    return 0;
+}
+
