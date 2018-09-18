@@ -1,0 +1,84 @@
+/*Kiara Barias
+Lab 1
+Finding the smaller of two integers
+*/Smaller.cpp
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y;
+	cout<< "Enter a number:";
+	cin>> x;
+	cout<< "Enter a second number:";
+	cin>> y;
+	if (x < y)
+	{
+	cout<< x;
+	}
+	if (y < x)
+	{
+	cout<< y;
+	}
+	return 0;
+}
+
+/*Finding the smaller of three integers
+*/smaller3.cpp
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x, y, z;
+	cout<< "Enter a number:";
+	cin>> x;
+	cout<< "Enter a second number:";
+	cin>> y;
+	cout<< "Enter a number:";
+	cin>> z;
+	if (x < y && x < z)
+	{
+	cout<< x;
+	}
+	if (y < x && y < z)
+	{
+	cout<< y;
+	}
+	if (z < x && z < y)
+	{
+	cout<< z;
+	}
+	return 0;
+}
+
+/*Asks user for any year and determines if it is a leap year
+*/Leap.cpp
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int year;
+	cout<< "Enter a year:";
+	cin>> year;
+	
+	if (year%4 > 0)
+	{
+	cout<< "Common year";
+	}
+	else if (year%100 > 0)
+	{
+	cout<< "Leap year";
+	}
+	else if (year%400 > 0)
+	{
+	cout<< "Common year";
+	}
+	else
+	{
+	cout<< "Leap year";
+	}
+	return 0;
+}
+
